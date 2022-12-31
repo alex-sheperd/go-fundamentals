@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 )
 
@@ -40,6 +41,13 @@ func main() {
 		fmt.Println("The number is prime:", tempNum)
 	case 0, 4, 6, 8, 9, 10, 12:
 		fmt.Println("The number is not prime", tempNum)
+	}
+
+	//if statements can also be used to check for error handling
+	_, err := os.Open("./test/txt")
+
+	if err != nil {
+		fmt.Println("There is the error code:", err)
 	}
 }
 
